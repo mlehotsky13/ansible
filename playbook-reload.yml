@@ -1,0 +1,15 @@
+- name: Reload Cisco Switch
+  hosts: myhosts
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Reload Switch
+      cli_command:
+        command: reload
+        prompt:
+          - Save?
+          - confirm
+        answer:
+          - y
+          - y

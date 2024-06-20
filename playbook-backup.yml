@@ -1,0 +1,15 @@
+- name: Backup Run Configuration
+  hosts: myhosts
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Backup Run Configuration
+      cli_command:
+        command: "show running-config"
+      register: backup
+
+    - name: Save configuration
+      copy:
+        content: "{{ backup.stdout }}"
+        dest: "{{ inventory_hostname }}-{{ datetime }}.backup"

@@ -1,0 +1,9 @@
+- name: Show info about provided interface
+  hosts: myhosts
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Show info about interface
+      cli_command:
+        command: show interface {{ interface }}
