@@ -1,10 +1,10 @@
-- name: Reload Cisco Switch
+- name: Reload Cisco Device
   hosts: myhosts
   gather_facts: no
   connection: network_cli
 
   tasks:
-    - name: Reload Switch
+    - name: Reload device
       cli_command:
         command: reload
         prompt:
