@@ -1,5 +1,5 @@
 - name: Reload Cisco Device
-  hosts: myhosts
+  hosts: cisco_devices
   gather_facts: no
   connection: network_cli
 
